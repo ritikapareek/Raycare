@@ -44,7 +44,7 @@ namespace RayCare
     }
     public abstract class Condition
     {
-        public string Name;
+        public ConditionType conditionType;
     }
 
     public class Topography
@@ -52,14 +52,20 @@ namespace RayCare
         public TopographyType Type { get; set; }
     }
 
-    public class Cancer: Condition
+    public class CancerCondition: Condition
     {
+        public CancerCondition()
+        {
+            this.conditionType = ConditionType.Cancer;
+        }
         public TopographyType TopographyType { get; set; }
     }
 
-    public class Flu : Condition
+    public class FluCondition : Condition
     {
-        
+        public FluCondition() {
+            this.conditionType = ConditionType.Flu;
+        }
     }
 
     public enum ConditionType

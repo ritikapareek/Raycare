@@ -47,12 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\ConsultationHelper.cs" />
+    <Compile Include="Helpers\EnumHelper.cs" />
+    <Compile Include="Services\HospitalConfigurationService.cs" />
+    <Compile Include="Services\PatientConditionService.cs" />
+    <Compile Include="Services\PatientService.cs" />
     <Compile Include="Model\Consultation.cs" />
     <Compile Include="Model\Data.cs" />
     <Compile Include="Helpers\JsonInputFileReader.cs" />
     <Compile Include="Model\HospitalConfiguration.cs" />
     <Compile Include="RayCareTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\SchedulingService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
