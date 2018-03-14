@@ -50,6 +50,7 @@
     <Compile Include="Helpers\ConsultationHelper.cs" />
     <Compile Include="Helpers\EnumHelper.cs" />
     <Compile Include="Services\HospitalConfigurationService.cs" />
+    <Compile Include="Model\Calendar.cs" />
     <Compile Include="Services\PatientConditionService.cs" />
     <Compile Include="Services\PatientService.cs" />
     <Compile Include="Model\Consultation.cs" />
