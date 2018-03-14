@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
+/// <summary>
+/// Initializes the various data models for Treatment Room, Treatment Machine,
+/// Doctor, Patient.
+/// </summary>
 namespace RayCare
 {
     public class TreatmentRoom
     {
         public string Name { get; set; }
-        public string TreatmentMachineName { get; set; }
+        public string TreatmentMachine { get; set; }
     }
 
     public class TreatmentMachine
@@ -71,13 +74,7 @@ namespace RayCare
         Breast
     }
 
-    public class Consultation
-    {
-        public string Id { get; set; }
-        public string PatientId { get; set; }
-        public DateTime RegistrationDate { get; set; }
-        public string DoctorId { get; set; }
-        public string RoomName { get; set; }
-        public DateTime ConsultationDate { get; set; }
-    }
+    
+
+    
 }
