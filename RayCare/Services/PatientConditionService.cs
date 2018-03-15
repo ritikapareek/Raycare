@@ -1,16 +1,17 @@
-﻿using System;
-using RayCare.Model;
-using RayCare.Helpers;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RayCare.Helpers;
 
 namespace RayCare.Services
 {
+    /// <summary>
+    /// This class describes the Patient's condition services.
+    /// </summary>
     public static class PatientConditionService
     {
-        public static CancerCondition readCancerServiceFromUser()
+        /// <summary>
+        /// This reads the cancer condition from user and fetches the Topography types.
+        /// </summary>
+        /// <returns></returns>
+        public static CancerCondition ReadCancerServiceFromUser()
         {
             CancerCondition condition = new CancerCondition();
             condition.TopographyType = (TopographyType)EnumHelper.ReadEnumValueFromUser(typeof(TopographyType));

@@ -8,14 +8,25 @@ using RayCare.Helpers;
 
 namespace RayCare.Services
 {
+    /// <summary>
+    /// Describes the Hospital Service to perform various functions 
+    /// like Add Patient, ShowRegisteredPatients.
+    /// </summary>
     public static class HospitalService
     {
+        /// <summary>
+        /// Adds a patient to the hospital configuration.
+        /// </summary>
+        /// <param name="patient"></param>
         public static void AddPatient(Patient patient)
         {
             HospitalConfiguration.GetInstance().Patients.Add(patient);
         }
 
-        public static void showRegisteredPatients()
+        /// <summary>
+        /// Displays all the registered patients in the hospital.
+        /// </summary>
+        public static void ShowRegisteredPatients()
         {
             Console.Clear();
             if (HospitalConfiguration.GetInstance().Patients.Count() == 0)
@@ -23,10 +34,13 @@ namespace RayCare.Services
                 Console.WriteLine("No registered patients yet.");
                 return;
             }
-            HospitalConfiguration.GetInstance().Patients.ForEach(patient => PatientHelper.printPatientInfo(patient));
+            HospitalConfiguration.GetInstance().Patients.ForEach(patient => PatientHelper.PrintPatientInfo(patient));
         }
 
-        public static void showConsultations()
+        /// <summary>
+        /// Displays all the consulations in the hospital.
+        /// </summary>
+        public static void ShowConsultations()
         {
             Console.Clear();
             if (HospitalConfiguration.GetInstance().Consultations.Count() == 0)
@@ -37,13 +51,17 @@ namespace RayCare.Services
             HospitalConfiguration.GetInstance().Consultations.ForEach(consultation => ConsultationHelper.PrintConsultationInfo(consultation));
         }
 
+        /// <summary>
+        /// Reads the patient information, schedule and prints the consultation
+        /// information.
+        /// </summary>
         public static void ReadPatientInformationAndSchedule()
         {
             Console.Clear();
             Patient patient = PatientService.AddPatientInformationFromUser();
-            HospitalService.AddPatient(patient);
+            AddPatient(patient);
             Consultation consultation = SchedulingService.GetInstance().Schedule(patient, 0);
-            ConsultationService.addConsultation(consultation);
+            ConsultationService.AddConsultation(consultation);
             ConsultationHelper.PrintConsultationInfo(consultation);
         }
     }

@@ -1,15 +1,17 @@
 ﻿using RayCare.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RayCare.Services
 {
-    class ConsultationService
+    /// <summary>
+    /// Describes the Consultation Service.
+    /// </summary>
+    public class ConsultationService
     {
-        public static void addConsultation(Consultation consultation)
+        /// <summary>
+        /// Add Consultation adds a consultation to the hospital configuration.
+        /// </summary>
+        /// <param name="consultation"></param>
+        public static void AddConsultation(Consultation consultation)
         {
             HospitalConfiguration hospitalConfiguration = HospitalConfiguration.GetInstance();
             hospitalConfiguration.Consultations.Add(consultation);

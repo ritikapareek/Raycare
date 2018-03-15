@@ -24,6 +24,12 @@ namespace RayCare.Services
             return instance;
         }
 
+        /// <summary>
+        /// Schedule a patient
+        /// </summary>
+        /// <param name="patient"></param>
+        /// <param name="registrationDay"></param>
+        /// <returns></returns>
         public Consultation Schedule(Patient patient, int registrationDay)
         {
             List<TreatmentRoom> rooms = new List<TreatmentRoom>();
@@ -52,7 +58,7 @@ namespace RayCare.Services
             }
 
             try {
-                Consultation consultation = SchedulingHelper.scheduleConsultation(rooms, doctors, registrationDay + 1);
+                Consultation consultation = SchedulingHelper.ScheduleConsultation(rooms, doctors, registrationDay + 1);
                 consultation.patient = patient;
                 return consultation;
             } catch (InvalidOperationException e)
@@ -70,7 +76,7 @@ namespace RayCare.Services
             if (treatmentMachineNeeded)
             {
                 rooms = allRooms.Where(tr => tr.TreatmentMachine != null)
-                    .Where(tr => capabilities.Contains(getCapabilitiesOfARoom(tr)))
+                    .Where(tr => capabilities.Contains(GetCapabilitiesOfARoom(tr)))
                     .ToList();
             } else
             {
@@ -78,7 +84,7 @@ namespace RayCare.Services
             }
         }
 
-        private Capability getCapabilitiesOfARoom(TreatmentRoom room)
+        private Capability GetCapabilitiesOfARoom(TreatmentRoom room)
         {
             return HospitalConfiguration.GetInstance()
                 .TreatmentMachines

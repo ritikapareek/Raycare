@@ -33,7 +33,7 @@ namespace RayCare
         /// </summary>
         private static void InitializeHospitalConfiguration()
         {
-            HospitalConfiguration.setInstance(Helper.ReadJsonFile());
+            HospitalConfiguration.SetInstance(JsonHelper.ReadJsonFile());
         }
 
         private static void DisplayHomeScreen()
@@ -57,10 +57,10 @@ namespace RayCare
                     HospitalService.ReadPatientInformationAndSchedule();
                     break;
                 case 2:
-                    HospitalService.showRegisteredPatients();
+                    HospitalService.ShowRegisteredPatients();
                     break;
                 case 3:
-                    HospitalService.showConsultations();
+                    HospitalService.ShowConsultations();
                     break;
                 default:
                     break;

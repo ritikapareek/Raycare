@@ -4,7 +4,10 @@ using RayCare.Model;
 
 namespace RayCare.Helpers
 {
-    public static class Helper
+    /// <summary>
+    /// Describes various helper functions for json.
+    /// </summary>
+    public static class JsonHelper
     {
         /// <summary>
         /// Reads the sample Json object from file and puts in the HospitalConfiguration.

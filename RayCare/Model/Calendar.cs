@@ -1,12 +1,10 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// Author: Ritika Pareek
 
 namespace RayCare.Model
 {
+    /// <summary>
+    /// This class defines the model of calendar.
+    /// </summary>
     public class Calendar
     {
         public const int NUM_DAYS = 180;
@@ -15,15 +13,24 @@ namespace RayCare.Model
         
         public Calendar()
         {
-            this.days = new int[NUM_DAYS];
+            days = new int[NUM_DAYS];
         }
 
-        public bool isAvailable(int i)
+        /// <summary>
+        /// Check if the calendar date is available.
+        /// </summary>
+        /// <param name="i"></param>
+        /// <returns></returns>
+        public bool IsAvailable(int i)
         {
             return days[i] == 0;
         }
 
-        public void book(int i)
+        /// <summary>
+        /// Books the calendar date.
+        /// </summary>
+        /// <param name="i"></param>
+        public void Book(int i)
         {
             days[i] = 1;
         }

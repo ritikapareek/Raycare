@@ -21,7 +21,7 @@ namespace RayCare.Model
                 instance = new HospitalConfiguration();
             return instance;
         }
-        public static HospitalConfiguration setInstance(HospitalConfiguration externalinstance)
+        public static HospitalConfiguration SetInstance(HospitalConfiguration externalinstance)
         {
             if (instance != null)
                 return instance;

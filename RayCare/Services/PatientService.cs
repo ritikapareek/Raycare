@@ -1,27 +1,32 @@
 ﻿using System;
 using RayCare.Helpers;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RayCare.Services
 {
+    /// <summary>
+    /// This describes the services for Patient
+    /// like adding patient information.
+    /// </summary>
     public static class PatientService
     {
+        /// <summary>
+        /// Gets patient's name and condition from the user.
+        /// Sets the user condition & toppography.
+        /// </summary>
+        /// <returns></returns>
         public static Patient AddPatientInformationFromUser()
         {
             Patient patient = new Patient();
-            Console.WriteLine("Enter your name");
+            Console.WriteLine("Enter your name:");
             patient.Name = Console.ReadLine();
 
-            Console.WriteLine("Enter your condition");
+            Console.WriteLine("Enter your condition:");
             ConditionType patientCondition = (ConditionType)EnumHelper.ReadEnumValueFromUser(typeof(ConditionType));
 
             switch (patientCondition)
             {
                 case ConditionType.Cancer:
-                    patient.Condition = PatientConditionService.readCancerServiceFromUser();
+                    patient.Condition = PatientConditionService.ReadCancerServiceFromUser();
                     break;
                 case ConditionType.Flu:
                     patient.Condition = new FluCondition();

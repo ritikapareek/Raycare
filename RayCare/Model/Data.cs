@@ -7,6 +7,12 @@ using System.Collections.Generic;
 /// </summary>
 namespace RayCare
 {
+    /// <summary>
+    /// Describes Treatment room with unique name.
+    /// Room is equiped with a Treatment Machine.
+    /// Calendar is associated witth the Treatment Room to
+    /// check its availability.
+    /// </summary>
     public class TreatmentRoom
     {
         public TreatmentRoom()
@@ -18,6 +24,10 @@ namespace RayCare
         public Calendar calender { get; set; }
     }
 
+    /// <summary>
+    /// Describes Treatment Machine with a unique name.
+    /// Each treatment machine has a capabiltiy.
+    /// </summary>
     public class TreatmentMachine
     {
         public string Name { get; set; }
@@ -29,6 +39,12 @@ namespace RayCare
         Advanced,
         Simple
     }
+
+    /// <summary>
+    /// Describes Doctor who has a name,id  and set of roles.
+    /// calendar is associated with a doctor to check his availability.
+    /// Doctor also has a unique Id.
+    /// </summary>
     public class Doctor
     {
         public Doctor()
@@ -47,6 +63,10 @@ namespace RayCare
         GeneralPractitioner
     }
 
+    /// <summary>
+    /// Describes a Patient with name and Condition.
+    /// Patient has a unique Id.
+    /// </summary>
     public class Patient
     {
         public int Id { get; set; }
@@ -67,15 +87,16 @@ namespace RayCare
     {
         public CancerCondition()
         {
-            this.conditionType = ConditionType.Cancer;
+            conditionType = ConditionType.Cancer;
         }
         public TopographyType TopographyType { get; set; }
     }
 
     public class FluCondition : Condition
     {
-        public FluCondition() {
-            this.conditionType = ConditionType.Flu;
+        public FluCondition()
+        {
+            conditionType = ConditionType.Flu;
         }
     }
 

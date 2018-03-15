@@ -1,15 +1,22 @@
 ﻿using RayCare.Model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RayCare.Helpers
 {
+    /// <summary>
+    /// Describes various helper functions for scheduling.
+    /// </summary>
     public static class SchedulingHelper
     {
-        public static Consultation scheduleConsultation(List<TreatmentRoom> rooms, List<Doctor> doctors, int startDay)
+        /// <summary>
+        /// Schedule a consultation if all the validations satisfies the conditions.
+        /// </summary>
+        /// <param name="rooms"></param>
+        /// <param name="doctors"></param>
+        /// <param name="startDay"></param>
+        /// <returns>Consultaion for a patient.</returns>
+        public static Consultation ScheduleConsultation(List<TreatmentRoom> rooms, List<Doctor> doctors, int startDay)
         {
             for (int day = startDay; day < Calendar.NUM_DAYS; day++)
             {
@@ -17,7 +24,7 @@ namespace RayCare.Helpers
                 Doctor availableDoctor = new Doctor();
                 foreach(Doctor doctor in doctors)
                 {
-                    if (doctor.calender.isAvailable(day))
+                    if (doctor.calender.IsAvailable(day))
                     {
                         isDoctorAvailable = true;
                         availableDoctor = doctor;
@@ -29,7 +36,7 @@ namespace RayCare.Helpers
                 TreatmentRoom availableRoom = new TreatmentRoom();
                 foreach (TreatmentRoom room in rooms)
                 {
-                    if (room.calender.isAvailable(day))
+                    if (room.calender.IsAvailable(day))
                     {
                         isRoomAvailable = true;
                         availableRoom = room;
@@ -44,8 +51,8 @@ namespace RayCare.Helpers
                     consultation.room = availableRoom;
                     consultation.ConsultationDate = DateTime.Now.AddDays(day);
                     consultation.RegistrationDate = DateTime.Now.AddDays(startDay - 1);
-                    availableDoctor.calender.book(day);
-                    availableRoom.calender.book(day);
+                    availableDoctor.calender.Book(day);
+                    availableRoom.calender.Book(day);
                     return consultation;
                 }
             }

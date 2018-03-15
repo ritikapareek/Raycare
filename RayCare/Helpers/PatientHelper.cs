@@ -1,14 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RayCare.Helpers
 {
-    class PatientHelper
+    /// <summary>
+    /// Describes various helper functions for the patient.
+    /// </summary>
+    public class PatientHelper
     {
-        public static void printPatientInfo(Patient patient)
+        /// <summary>
+        /// Displays the patient information:
+        /// Patient name and condition type.
+        /// </summary>
+        /// <param name="patient"></param>
+        public static void PrintPatientInfo(Patient patient)
         {
             Console.WriteLine("____________________Patient Information____________________");
             Console.WriteLine("Name: " + patient.Name);
