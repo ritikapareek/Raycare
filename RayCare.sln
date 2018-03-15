@@ -5,12 +5,12 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RayCare", "RayCare\RayCare.csproj", "{22828DA4-599E-4C65-9C86-D90034646E80}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E80170B6-54DF-4B9D-B339-B5DC9875BE17}"
-	ProjectSection(SolutionItems) = preProject
-		InitialHospitalData.json = InitialHospitalData.json
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RayCareTest", "RayCareTest\RayCareTest.csproj", "{90612D51-4CE3-4DA1-8642-C5312DCE373C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2AE5AFBD-10A6-47AA-95F1-4795D96F1BFB}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
