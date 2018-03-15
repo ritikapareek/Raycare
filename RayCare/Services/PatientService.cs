@@ -26,9 +26,7 @@ namespace RayCare.Services
                 case ConditionType.Flu:
                     patient.Condition = new FluCondition();
                     break;
-
             }
-
             return patient;
         }
     }

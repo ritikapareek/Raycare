@@ -10,7 +10,14 @@ namespace RayCare
         static void Main(string[] args)
         {
             Initialize();
-            DisplayHomeScreen();
+            while (true)
+            {
+                DisplayHomeScreen();
+                Console.WriteLine("\nPress any key to continue. Press q to quit.");
+                ConsoleKeyInfo key = Console.ReadKey();
+                if (key.KeyChar == 'q')
+                    break;
+            }
         }
 
         /// <summary>
@@ -47,31 +54,19 @@ namespace RayCare
             switch (userInput)
             {
                 case 1:
-                    ReadPatientInformationAndSchedule();
-                    Console.ReadLine();
+                    HospitalService.ReadPatientInformationAndSchedule();
                     break;
-                case '2':
-                    Console.WriteLine("hi");
-                    Console.ReadLine();
+                case 2:
+                    HospitalService.showRegisteredPatients();
                     break;
-                case '3':
-                    Console.WriteLine("hi");
-                    Console.ReadLine();
+                case 3:
+                    HospitalService.showConsultations();
                     break;
                 default:
                     break;
             }
         }
 
-        private static void ReadPatientInformationAndSchedule()
-        {
-            Console.Clear();
-            Patient patient = PatientService.AddPatientInformationFromUser();
-            HospitalConfiguration hospitalConfiguration = HospitalConfiguration.GetInstance();
-            HospitalConfigurationService.AddPatient(patient);
-            Consultation consultation = SchedulingService.GetInstance().Schedule(patient);
-            ConsultationHelper.DisplayConsultation(consultation);
-            
-        }
+       
     }
 }

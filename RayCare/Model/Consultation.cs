@@ -7,11 +7,10 @@ namespace RayCare.Model
     /// </summary>
     public class Consultation
     {
-        public string Id { get; set; }
-        public string PatientId { get; set; }
+        public Patient patient { get; set; }
         public DateTime RegistrationDate { get; set; }
-        public string DoctorId { get; set; }
-        public string RoomName { get; set; }
+        public Doctor doctor { get; set; }
+        public TreatmentRoom room { get; set; }
         public DateTime ConsultationDate { get; set; }
     }
 }
