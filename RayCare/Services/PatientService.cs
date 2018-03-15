@@ -17,8 +17,12 @@ namespace RayCare.Services
         public static Patient AddPatientInformationFromUser()
         {
             Patient patient = new Patient();
-            Console.WriteLine("Enter your name:");
-            patient.Name = Console.ReadLine();
+            
+            do
+            {
+                Console.WriteLine("Enter your name:");
+                patient.Name = Console.ReadLine();
+            } while (patient.Name == string.Empty);
 
             Console.WriteLine("Enter your condition:");
             ConditionType patientCondition = (ConditionType)EnumHelper.ReadEnumValueFromUser(typeof(ConditionType));

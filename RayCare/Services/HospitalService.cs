@@ -28,7 +28,7 @@ namespace RayCare.Services
         /// </summary>
         public static void ShowRegisteredPatients()
         {
-            Console.Clear();
+            if (!Console.IsOutputRedirected) Console.Clear();
             if (HospitalConfiguration.GetInstance().Patients.Count() == 0)
             {
                 Console.WriteLine("No registered patients yet.");
