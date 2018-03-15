@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using RayCare.Model;
+
 namespace RayCare.Model
 {
     /// <summary>

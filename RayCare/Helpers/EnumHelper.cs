@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RayCare.Helpers
 {
@@ -10,7 +6,7 @@ namespace RayCare.Helpers
     {
         public static Enum ReadEnumValueFromUser(Type enumGeneric)
         {
-            int i = 0;
+            int i = 1;
             // Getting all the values of this enum type
             var enumValues = Enum.GetValues(enumGeneric);
             foreach (var enumVal in enumValues)
@@ -22,10 +18,10 @@ namespace RayCare.Helpers
             int userInput = 0;
             bool isUserInputValid = Int32.TryParse(Console.ReadLine(), out userInput);
             // Checking if the user entered a string which is an integer
-            // and checking if the integer enters 
-            if (isUserInputValid && userInput >= 0 && userInput < enumValues.Length)
+            // and checking if the integer enterd is within the enum index bound 
+            if (isUserInputValid && userInput > 0 && userInput <= enumValues.Length)
             {
-                return (Enum)enumValues.GetValue(userInput);
+                return (Enum)enumValues.GetValue(userInput - 1);
             }
             else { 
                 Console.WriteLine("Invalid input, please try again");

@@ -12,7 +12,7 @@ namespace RayCare.Helpers
         {
             Console.WriteLine("____________________Patient Information____________________");
             Console.WriteLine("Name: " + patient.Name);
-            Console.WriteLine("Condition: " + patient.Condition.ToString());
+            Console.WriteLine("Condition: " + patient.Condition.conditionType.ToString());
         }
     }
 }

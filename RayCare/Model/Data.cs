@@ -90,8 +90,5 @@ namespace RayCare
         HeadAndNeck,
         Breast
     }
-
-    
-
     
 }
